@@ -110,7 +110,6 @@ void motorOff()
   for (int i = (myservo.read()/10)*10; i >= 90; i -= 10){
       myservo.write(i);
       delay(100);
-      Serial.println(i);
     }      
 }
 
@@ -121,21 +120,20 @@ void loop()
       flagFlap = 0;
       setColor(0,0,0);
       motorOff();
-      Serial.println(flagFlap);
-      Serial.println("Mayank");
+      
     }
 
     if (analogRead(ldrPin) > 600 && flagFlap == 0 && ultra() < maxDistance-50)
     {
       flagFlap = 1;
       motorOn();
-      Serial.println("ASHU");
+     
     }
     if (Serial.available()>0)
     {
       while (Serial.available() > 0)
       {
-        Serial.println("Rahul");
+        
         r_char = Serial.readString();
         char Mode = r_char.charAt(0);
         int len = r_char.length();
@@ -153,7 +151,7 @@ void loop()
             analogWrite(redPin, v1);
             analogWrite(greenPin, v2);
             analogWrite(bluePin, v3);
-            Serial.println(r_char);
+            
             delay(4000);            
         }
       
@@ -165,9 +163,6 @@ void loop()
             int Red = abs((PressureRed - analogRead(Pin1)/6));
             int Green = abs((PressureGreen - analogRead(Pin1)/6));
             int Blue = abs((PressureBlue - analogRead(Pin1)/2));
-            Serial.println(Red);
-            Serial.println(Green);
-            Serial.println(Blue);
             setColor(Red, Green, Blue);
             delay(1000);
             setColor(0,0,0);
@@ -243,7 +238,7 @@ void loop()
     {
       Serial.println(automatic());
       setColor(automatic(),automatic(),automatic());
-      Serial.println("AVYAKT");
+    
     }
     delay(1000);
 }
