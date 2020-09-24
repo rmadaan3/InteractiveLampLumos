@@ -3,6 +3,7 @@
 //SERVO
 Servo myservo;
 int pos = 0;
+
 //SERVO
 //LDR AND LED's
 int redPin = 11;
