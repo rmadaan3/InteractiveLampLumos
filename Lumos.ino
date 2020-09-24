@@ -15,6 +15,7 @@ int ldrPin = A0;
 int Pin1 = A6;
 int Pin2 = A2;
 int Pin3 = A3;
+
 //ULTRASONIC SENSOR
 int trigPin = 5;
 int echoPin = 4;
